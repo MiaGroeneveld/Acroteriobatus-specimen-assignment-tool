@@ -1,11 +1,7 @@
-###############################################################################
-# Acroteriobatus specimen assignment tool
+## Acroteriobatus specimen assignment tool
 # IMPORTANT - read the README before running
-###############################################################################
 
-## ---------------------------------------------------------------------------
 ## Required packages
-## ---------------------------------------------------------------------------
 # install.packages(c("ape", "adegenet", "dplyr"))
 # install.packages("spider", repos = "http://R-Forge.R-project.org")
 # BarcodingR is not on CRAN - install from GitHub:
@@ -16,9 +12,7 @@ library(adegenet)    # fasta2DNAbin()
 library(spider)       # bestCloseMatch()
 library(BarcodingR)   # barcoding.spe.identify(), barcoding.spe.identify2()
 
-###############################################################################
 ## PART A: COI
-###############################################################################
 
 ## --- A1. File paths (edit if your file names/locations differ) ------------
 coi_reference_fasta <- "data/reference_sequences_COI.fasta"
@@ -52,21 +46,19 @@ coi_bcma_all <- bestCloseMatch(coi_dist, coi_full_labels, threshold = coi_thresh
 # Keep only the query rows - reference rows were already validated in the paper.
 coi_bcma <- coi_bcma_all[coi_full_labels == "unknown", ]
 
-write.csv(coi_bcma, "example_output/coi_bcma_results.csv", row.names = FALSE)
+write.csv(coi_bcma, "output/coi_bcma_results.csv", row.names = FALSE)
 
 ## --- A5. Methods 2-4: BP, FZ, FZKMER (BarcodingR), run on the HAPLOTYPE alignment ---
 coi_bp <- barcoding.spe.identify(coi_reference, coi_query_hap, method = "bpNewTraining")
-write.csv(coi_bp, "example_output/coi_bp_results.csv", row.names = FALSE)
+write.csv(coi_bp, "output/coi_bp_results.csv", row.names = FALSE)
 
 coi_fz <- barcoding.spe.identify(coi_reference, coi_query_hap, method = "fuzzyId")
-write.csv(coi_fz, "example_output/coi_fz_results.csv", row.names = FALSE)
+write.csv(coi_fz, "output/coi_fz_results.csv", row.names = FALSE)
 
 coi_fzkmer <- barcoding.spe.identify2(coi_reference, coi_query_hap, kmer = 5, optimization = TRUE)
-write.csv(coi_fzkmer, "example_output/coi_fzkmer_results.csv", row.names = FALSE)
+write.csv(coi_fzkmer, "output/coi_fzkmer_results.csv", row.names = FALSE)
 
-###############################################################################
 ## PART B: ND2
-###############################################################################
 
 ## --- B1. File paths ----------------------------------------------------------
 nd2_reference_fasta <- "data/reference_sequences_ND2.fasta"
@@ -94,14 +86,14 @@ diag(nd2_dist) <- NA
 nd2_bcma_all <- bestCloseMatch(nd2_dist, nd2_full_labels, threshold = nd2_threshold, names = TRUE)
 nd2_bcma <- nd2_bcma_all[nd2_full_labels == "unknown", ]
 
-write.csv(nd2_bcma, "example_output/nd2_bcma_results.csv", row.names = FALSE)
+write.csv(nd2_bcma, "output/nd2_bcma_results.csv", row.names = FALSE)
 
 ## --- B5. Methods 2-4: BP, FZ, FZKMER (BarcodingR), run on the HAPLOTYPE alignment ---
 nd2_bp <- barcoding.spe.identify(nd2_reference, nd2_query_hap, method = "bpNewTraining")
-write.csv(nd2_bp, "example_output/nd2_bp_results.csv", row.names = FALSE)
+write.csv(nd2_bp, "output/nd2_bp_results.csv", row.names = FALSE)
 
 nd2_fz <- barcoding.spe.identify(nd2_reference, nd2_query_hap, method = "fuzzyId")
-write.csv(nd2_fz, "example_output/nd2_fz_results.csv", row.names = FALSE)
+write.csv(nd2_fz, "output/nd2_fz_results.csv", row.names = FALSE)
 
 nd2_fzkmer <- barcoding.spe.identify2(nd2_reference, nd2_query_hap, kmer = 5, optimization = TRUE)
-write.csv(nd2_fzkmer, "example_output/nd2_fzkmer_results.csv", row.names = FALSE)
+write.csv(nd2_fzkmer, "output/nd2_fzkmer_results.csv", row.names = FALSE)
