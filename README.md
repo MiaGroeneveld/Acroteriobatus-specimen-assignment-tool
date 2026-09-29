@@ -8,7 +8,7 @@ This tool accompanies:
 > (Rhinopristiformes: Rhinobatidae). *Marine Biodiversity*.
 > https://doi.org/10.1007/s12526-025-01617-x
 
-If you use this, please cite the paper above. An example of the
+If you use this, please cite the paper above as well as the relevant R packages. An example of the
 consensus-assignment output is given in Tables S5 and S6 of the paper's
 supplementary information.
 
