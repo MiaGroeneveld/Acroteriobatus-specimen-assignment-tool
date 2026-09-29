@@ -1,4 +1,4 @@
-# Acroteriobatus specimen assignment tool
+# Acroteriobatus specimen assignment
 
 This tool accompanies:
 
@@ -8,14 +8,14 @@ This tool accompanies:
 > (Rhinopristiformes: Rhinobatidae). *Marine Biodiversity*.
 > https://doi.org/10.1007/s12526-025-01617-x
 
-If you use this tool, please cite the paper above. An example of the
+If you use this, please cite the paper above. An example of the
 consensus-assignment output is given in Tables S5 and S6 of the paper's
 supplementary information.
 
 ## What this does
 
 Given fasta alignments of unidentified specimens (COI and/or ND2), this
-workflow assigns each one to a described *Acroteriobatus* species using four
+workflow assigns each one to a delineated *Acroteriobatus* species using four
 methods:
 
 | Method | Package | Approach |
