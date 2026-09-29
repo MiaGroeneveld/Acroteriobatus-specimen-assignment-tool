@@ -150,7 +150,7 @@ devtools::install_github("qinguoyou/BarcodingR")
 
 1. Clone this repository structure.
 2. Place the reference fasta files in `data/`.
-3. Prepare your own unidentified specimens locally as fasta alignments:
+3. Prepare your own unidentified specimens locally as fasta alignments
    and place them in `data/`.
 4. Run `scripts/specimen_assignment.R`. It processes COI and ND2 as two
    separate sections in the same script - if you only have
