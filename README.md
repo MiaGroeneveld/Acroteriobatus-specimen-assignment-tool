@@ -33,9 +33,9 @@ checked against independent evidence (e.g. morphology) rather than forced
 to a single species.
 
 Species delimitation (i.e. defining the MOTUs/species groups themselves) is
-**not** performed by this script - that step is described in the main paper.
-This tool assumes species boundaries are already established and assigns
-new, unidentified sequences against that reference framework.
+**not** performed by this script. This tool assumes species boundaries are
+already established and assigns new, unidentified sequences against
+that reference framework.
 
 ## Important: BCMA uses the full alignment; BP, FZ and FZKMER use haplotypes
 
@@ -86,8 +86,7 @@ update this script as new sequences become available.
 
 ## Repository structure
 
-This repository, as you clone or download it, contains only the scripts and
-the reference data:
+This repository contains only the scripts and the reference data:
 
 ```
 .
@@ -96,8 +95,8 @@ the reference data:
 │   ├── specimen_assignment.R          # main workflow - run this for routine assignment
 │   └── threshold_reoptimisation.R     # only run if the reference set changes
 └── data/
-    ├── reference_sequences_COI.fasta      # you add this - see below
-    ├── reference_sequences_ND2.fasta      # you add this - see below
+    ├── reference_sequences_COI.fasta
+    ├── reference_sequences_ND2.fasta
     └── reference_accessions.csv           # species <-> GenBank accession lookup
 ```
 
@@ -111,7 +110,7 @@ data/
 ├── unknown_ND2_full.fasta
 └── unknown_ND2_haplotypes.fasta
 
-example_output/                     # created automatically when you run the script
+output/                             # created automatically when you run the script
 ```
 
 ## Getting the reference sequences
@@ -122,8 +121,8 @@ Two ways to obtain the reference fasta files:
    and `reference_sequences_ND2.fasta` in `data/` contain one representative
    sequence per described species used in Groeneveld et al. (2026).
 2. **Download from GenBank/BOLD yourself**, using the accession numbers
-   listed in `data/reference_accessions.csv` (also given in Table S2 of the
-   paper's supplementary information). In-house generated sequences are
+   listed in `data/reference_accessions.csv` (all other accessions given in Table S2
+   of the paper's supplementary information). In-house generated sequences are
    additionally available under project **MTACR** on BOLD:
    https://portal.boldsystems.org/result?query=MTACR[recordsetcode]
 
@@ -156,7 +155,7 @@ devtools::install_github("qinguoyou/BarcodingR")
 4. Run `scripts/specimen_assignment.R`. It processes COI and ND2 as two
    separate sections in the same script - if you only have
    data for one marker, just run that section.
-5. Each method's results are written to its own file in `example_output/`,
+5. Each method's results are written to its own file in `output/`,
    created automatically when you run the script.
 
 ## Contact
