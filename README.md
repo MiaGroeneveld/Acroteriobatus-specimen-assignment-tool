@@ -67,7 +67,7 @@ reference set used for routine assignment - see
 `scripts/threshold_reoptimisation.R`.
 
 **The fixed thresholds are validated for a specific species set, not all
-eight described species:**
+ten described species:**
 
 - COI: validated for *A. annulatus*, *A. blochii*, *A. andysabini*,
   *A. leucospilus*, *A. variegatus* and *A. zanzibarensis*. No COI sequences
